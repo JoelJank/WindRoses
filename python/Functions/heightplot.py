@@ -74,10 +74,12 @@ def heightplots(heightfile, meshgrid_params, rectangles = None, save_figure = Fa
     return fig, ax
 
 
-test1, test2 = heightplots("/home/joel/Schreibtisch/Github/WindRoses/v_2_height.npy", 
+""""
+test1, test2 = heightplots("/home/joel/Schreibtisch/Github/WindRoses/Data/v_2_height.npy", 
                            (-80000, 85000, -85000, 80000, 25, 25), 
-                           rectangles = "/home/joel/Schreibtisch/Github/WindRoses/dunefields.json", 
+                           rectangles = "/home/joel/Schreibtisch/Github/WindRoses/Data/dunefields.json", 
                            save_figure = True, 
                            safepath = "/home/joel/Schreibtisch/Github/WindRoses/figures", 
                            figsize = (10,8), colormap = 'turbo', 
                            fontsize_plot = 10, fontsize_legends = 12)
+"""
