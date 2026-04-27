@@ -5,7 +5,8 @@ import os
 
 def read_literature_windrose_data(folder_path, bin_size = 10):
     """
-    Reads wind rose data from .dat files in the specified folder.
+    Reads wind rose data from .dat files in the specified folder. 
+    It calculates the length of the bins from the x and y positions and adjusts the degree to represent the center of the bin.
 
     Parameters:
     folder_path (str): The absolute path to the folder containing the .csv files. The files need to contain: Degree (starting degree of the bin), x (x Position of the end of the bin), y (y Position of the end of the bin). The files need to be separated by ';' and use ',' as decimal separator.

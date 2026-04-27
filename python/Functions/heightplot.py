@@ -3,22 +3,26 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import os
 import json
-from pathlib import Path
 
 
 def heightplots(heightfile, meshgrid_params, rectangles = None, save_figure = False, safepath = None, 
                 figsize = (10,8), colormap = 'turbo', fontsize_plot = 10, fontsize_legends = 12):
     """
-    Give out the height plot of the area. The height data should be in a .npy file, which can be created from the .dat file using prepdata.py.    
-    :param heightfile: Absolute path to the .npy file containing the height data.
-    :param meshgrid_params: A tuple containing the parameters for the meshgrid: (x_start, x_end, y_start, y_end, stepsize_x, stepsize_y).
-    :param rectangles: Absolute path to a .json file containing the dimensions and text positions of rectangles to highlight specific regions.
-    :param save_figure: Whether to save the figure as PNG files.
-    :param safepath: Absolute path to the directory where the figure should be saved. If None, the figure will be saved in the current working directory.
-    :param figsize: Size of the figure in inches (width, height).
-    :param colormap: Colormap to be used for the height plot. Default is 'turbo'.
-    :param fontsize_plot: Font size for the colorbar label. Default is 10.
-    :param fontsize_legends: Font size for the rectangle labels. Default is 12.
+    Reads height data from .npy files in the specified folder.
+
+    Parameters:
+    heightfile (str): The absolute path to the .npy file containing the height data.
+    meshgrid_params (tuple): A tuple containing the parameters for the meshgrid: (x_start, x_end, y_start, y_end, stepsize_x, stepsize_y).
+    rectangles (str, optional): The absolute path to a .json file containing the dimensions and text positions of rectangles to highlight specific regions.
+    save_figure (bool, optional): Whether to save the figure as PNG files. Default is False.
+    safepath (str, optional): The absolute path to the directory where the figure should be saved. If None, the figure will be saved in the current working directory.
+    figsize (tuple, optional): Size of the figure in inches (width, height). Default is (10, 8).
+    colormap (str, optional): Colormap to be used for the height plot. Default is 'turbo'.
+    fontsize_plot (int, optional): Font size for the colorbar label. Default is 10.
+    fontsize_legends (int, optional): Font size for the rectangle labels. Default is 12.
+
+    Returns:
+    tuple: A tuple containing the figure and axes objects.
     """
 
     Aheight = np.load(heightfile)

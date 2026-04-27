@@ -10,9 +10,11 @@ def plot_literature_windrose_data(folder_path, bin_size = 10, save_fig = False, 
     Parameters:
     folder_path (str): The absolute path to the folder containing the .csv files. The files need to contain: Degree (starting degree of the bin), x (x Position of the end of the bin), y (y Position of the end of the bin). The files need to be separated by ';' and use ',' as decimal separator.
     bin_size (int, optional): The size of the bins in degrees. Default is 10.
+    save_fig (bool, optional): Whether to save the figure as PNG files. Default is False.
+    save_path (str, optional): The absolute path to the directory where the figure should be saved. If None, the figure will be saved in the current working directory.
     
     Returns:
-    None
+    tuple: A tuple containing the figure and axes objects.
     """
     names, data_dict = read_literature_windrose_data(folder_path, bin_size)
     
