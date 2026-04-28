@@ -1,3 +1,6 @@
 *.dat
 *.npy
 .vscode/
+__pycache__/
+*.log
+Data/
