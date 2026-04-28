@@ -5,7 +5,7 @@ import os
 import json
 
 
-def heightplots(heightfile, meshgrid_params, rectangles = None, save_figure = False, safepath = None, 
+def heightplots(heightfile, meshgrid_params, ax = None, rectangles = None, save_figure = False, safepath = None, 
                 figsize = (10,8), colormap = 'turbo', fontsize_plot = 10, fontsize_legends = 12):
     """
     Reads height data from .npy files in the specified folder.
@@ -27,12 +27,20 @@ def heightplots(heightfile, meshgrid_params, rectangles = None, save_figure = Fa
 
     Aheight = np.load(heightfile)
 
-    x_start, x_end, y_start, y_end, stepsize_x, stepsize_y = meshgrid_params
+    x_start = meshgrid_params["x_min"]
+    x_end = meshgrid_params["x_max"]
+    y_start = meshgrid_params["y_min"]
+    y_end = meshgrid_params["y_max"]
+    stepsize_x = meshgrid_params["x_step"]
+    stepsize_y = meshgrid_params["y_step"]
 
     xq, yq = np.meshgrid(np.arange(x_start, x_end+1, stepsize_x), 
                          np.arange(y_start, y_end+1, stepsize_y))
     
-    fig, ax = plt.subplots(figsize=figsize, dpi=300)
+    if ax is None:
+        fig, ax = plt.subplots(figsize=figsize, dpi=300)
+    else:
+        fig = ax.get_figure()
 
     p = ax.pcolormesh(xq, yq, Aheight, shading='auto', cmap=colormap)
 
@@ -45,9 +53,9 @@ def heightplots(heightfile, meshgrid_params, rectangles = None, save_figure = Fa
                                 fill=False, edgecolor='black', linewidth=2))
             ax.text(rect['textpos'][0], rect['textpos'][1], rect['name'], fontsize = fontsize_legends, color = 'black')
 
-    cbar = plt.colorbar(p)
+    cbar = plt.colorbar(p, ax = ax)
     cbar.set_label("Elevation [m]", fontsize = fontsize_plot)
-    ax.set_aspect('equal')
+    ax.set_aspect('equal', adjustable = 'box')
     ax.axis('off')
     ax.set_xlim(xq.min(), xq.max())
     ax.set_ylim(yq.min(), yq.max())

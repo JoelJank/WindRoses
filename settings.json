@@ -1,0 +1,23 @@
+{
+    "heightfile": "/home/joel/Schreibtisch/Github/WindRoses/Data/heightdata/v_2_height.npy",
+    "meshgrid_params": {
+        "x_min": -80000,
+        "x_max": 85000,
+        "y_min": -85000,
+        "y_max": 80000,
+        "x_step": 25,
+        "y_step": 25
+    },
+    "rectangles": "/home/joel/Schreibtisch/Github/WindRoses/dunefields.json",
+    "save_figure": false,
+    "figsize": [10,8],
+    "colormap": "turbo",
+    "fontsize_plot": 10,
+    "fontsize_legends": 10,
+    "literature_path": "/home/joel/Schreibtisch/Github/WindRoses/WindRose_data/hobbs_data",
+    "winddir_binsize": 10,
+    "rose_inset_size": 30000,
+    "fontsize_inset_ticks": 6
+
+
+}
