@@ -14,9 +14,11 @@ def plot_literature_windrose_data(folder_path, bin_size = 10, save_fig = False, 
     save_path (str, optional): The absolute path to the directory where the figure should be saved. If None, the figure will be saved in the current working directory.
     
     Returns:
-    tuple: A tuple containing the figure and axes objects.
+    dict: A dictionary where keys are file names and values are tuples of (figure, axes) for each wind rose plot.
     """
     names, data_dict = read_literature_windrose_data(folder_path, bin_size)
+
+    plots_dict = {}
     
     for name in names:
         df = data_dict[name]
@@ -33,7 +35,7 @@ def plot_literature_windrose_data(folder_path, bin_size = 10, save_fig = False, 
                 plt.savefig(save_path + f"/{name}_windrose.png", dpi = 300, bbox_inches = "tight")
             else:
                 plt.savefig(f"{name}_windrose.png", dpi = 300, bbox_inches = "tight")
+        
+        plots_dict[name] = (fig,ax)
 
-    return fig, ax
-
-plot_literature_windrose_data("/home/joel/Schreibtisch/Github/WindRoses/WindRose_data/hobbs_data", bin_size=10, save_fig = True, save_path = "/home/joel/Schreibtisch/Github/WindRoses/figures")
+    return plots_dict

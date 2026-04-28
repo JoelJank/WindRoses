@@ -42,7 +42,7 @@ def windrose_from_shear(tau_x, tau_y, meshgrid_params, rectangles = None, remove
     if int(filename) == 1:
         winddirection = 0
     else:
-        winddirection = (int(filename)-1) * winddir_binsize
+        winddirection = (int(filename)-1) * winddir_binsize #This is matched for my system: If the nummeration is different, change it
 
     math_angle = np.degrees(np.arctan2(data_y, data_x))
     wind_from = (270 - math_angle) % 360
@@ -58,7 +58,7 @@ def windrose_from_shear(tau_x, tau_y, meshgrid_params, rectangles = None, remove
 
             "Degree": bin_centers,
             "Length": hist_norm.copy(),
-            "counts": hist
+            "Counts": hist
         }
     
 
@@ -84,17 +84,6 @@ def windrose_from_shear(tau_x, tau_y, meshgrid_params, rectangles = None, remove
         "windroses": windroses
     }
 
-
-
-for i in (4,7,22):
-    print(i)
-    print(windrose_from_shear(f"/home/joel/Schreibtisch/Github/WindRoses/Data/shearstressdata/v_2_{i}_nodevalues_taux.npy",
-                          f"/home/joel/Schreibtisch/Github/WindRoses/Data/shearstressdata/v_2_{i}_nodevalues_tauy.npy",
-                          (-80000, 85000, -85000, 80000, 25, 25),
-                          rectangles = "/home/joel/Schreibtisch/Github/WindRoses/Data/dunefields.json",
-                          removecharactersfromfilename = ["v_2_","_nodevalues_taux"],
-                          winddir_binsize=15,
-                          bin_size = 10))
 
 
         
