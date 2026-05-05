@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from windrose_from_shear import windrose_from_shear
 
-def plot_own_windrose(folder_path, meshgrid_params, rectangles = None, removecharactersfromfilename = ["v_2_","_nodevalues_taux"], winddir_binsize = 15, bin_size = 10, save_fig = False, save_path = None):
+def plot_own_windrose(folder_path, meshgrid_params, rectangles = None, removecharactersfromfilename = ["v_0.5_","_nodevalues_taux"], winddir_binsize = 15, bin_size = 10, save_fig = False, save_path = None):
     
     plots_dict = {}
 
@@ -38,6 +38,11 @@ def plot_own_windrose(folder_path, meshgrid_params, rectangles = None, removecha
 
 
     return plots_dict
+
+plot_own_windrose(r"H:\Github\WindRoses\Data\shearstressdata_05", 
+                  (-80000, 85000, -85000, 80000, 25, 25), 
+                  rectangles = "H:\Github\WindRoses\dunefields.json", save_fig = True, 
+                  save_path = r"H:\Github\WindRoses\Figures\ownwindrose_05")
 
         
 

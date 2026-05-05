@@ -73,6 +73,8 @@ if __name__ == "__main__":
     #TODO: Add text with region name under the windroses. 
     #TODO: Fix the inset position of the windroses in the dunefield.json. Fix the size of the inset ticks.
     #TODO: Maybe also add an own python file for the function on the top, so that the main.py is not too long.
+    #TODO: Write a function that displays all of the windroses in one figure for different regions and winddirections to show how hard the linear combination is
+    #TODO: Write the linear combination part lol
 
 
     
