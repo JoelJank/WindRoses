@@ -51,7 +51,7 @@ def heightplots(heightfile, meshgrid_params, ax = None, rectangles = None, save_
             ax.add_patch(Rectangle((rect['dimensions'][0], rect['dimensions'][1]), 
                                 rect['dimensions'][2], rect['dimensions'][3], 
                                 fill=False, edgecolor='black', linewidth=2))
-            ax.text(rect['textpos'][0], rect['textpos'][1], rect['name'], fontsize = fontsize_legends, color = 'black')
+            ax.text(rect['textpos'][0], rect['textpos'][1], f"{rect['name']})", fontsize = fontsize_legends, color = 'black')
 
     cbar = plt.colorbar(p, ax = ax)
     cbar.set_label("Elevation [m]", fontsize = fontsize_plot)

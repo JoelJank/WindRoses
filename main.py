@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 import os
 import sys
 import json
-sys.path.append(os.path.join(os.path.dirname(__file__), "python/Functions"))
-from heightplot import heightplots
-from readliteraturewindrosedata import read_literature_windrose_data
+from python.Functions.heightplot import heightplots
+from python.Functions.readliteraturewindrosedata import read_literature_windrose_data
 
 
 def plot_windrose_on_Ax(ax, data, bin_size = 10):

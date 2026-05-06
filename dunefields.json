@@ -3,8 +3,8 @@
         "name": "A",
         "name_addition": "Upper north-west dunefield",
         "dimensions": [-22000, 35000, 19000, 10000],
-        "textpos": [-11000, 39137],
-        "rose_position": [-11000, 39137]
+        "textpos": [-14000, 39137],
+        "rose_position": [-5000, 50137]
     },
     
     {
@@ -12,14 +12,14 @@
         "name_addition": "Lower north-west dunefield",
         "dimensions": [-34450, 25550, 11000, 11000],
         "textpos": [-28900, 30137],
-        "rose_position": [-28900, 30137]
+        "rose_position": [-45000, 40137]
     },
     {
         "name": "C",
         "name_addition": "Western sand sea",
         "dimensions": [-51175, -9700, 18000, 36825],
         "textpos": [-42175, 8712],
-        "rose_position": [-42175, 8712]
+        "rose_position": [-50000, -15000]
     },
 
     {
@@ -27,27 +27,27 @@
         "name_addition": "North-eastern dunefield",
         "dimensions": [22225, 4475, 32850, 36000],
         "textpos": [36650, 20112],
-        "rose_position": [36650, 20112]
+        "rose_position": [56650, 20112]
     },
     {
         "name": "E",
         "name_addition": "South-eastern dunefield",
         "dimensions": [18000, -55000, 35000, 45000],
-        "textpos": [20000, -36275],
-        "rose_position": [20000, -36275]
+        "textpos": [30000, -36275],
+        "rose_position": [50000, -36275]
     },
     {
         "name": "F",
         "name_addition": "Southern dunefield",
         "dimensions": [-21325, -60575, 32825, 40600],
-        "textpos": [1637, -36275],
-        "rose_position": [1637, -36275]
+        "textpos": [-3000, -36275],
+        "rose_position": [1637, -60275]
     },
     {
         "name": "G",
         "name_addition": "South-western dunefield",
         "dimensions":[-32000, -52000, 15000, 18000],
         "textpos": [-26900, -48275],
-        "rose_position": [-26900, -48275]
+        "rose_position": [-46900, -60275]
     }
 ]

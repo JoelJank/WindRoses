@@ -79,10 +79,7 @@ def windrose_from_shear(tau_x, tau_y, meshgrid_params, rectangles = None, remove
             if np.any(mask):
                 windroses[rect['name']] = compute_windrose_for_region(mask)
 
-    return {
-        "winddirection": winddirection,
-        "windroses": windroses
-    }
+    return windroses
 
 
 
