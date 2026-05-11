@@ -39,10 +39,6 @@ def windrose_from_shear(tau_x, tau_y, meshgrid_params, rectangles = None, remove
         else:
             filename = filename.replace(removecharactersfromfilename, '')
 
-    if int(filename) == 1:
-        winddirection = 0
-    else:
-        winddirection = (int(filename)-1) * winddir_binsize #This is matched for my system: If the nummeration is different, change it
 
     math_angle = np.degrees(np.arctan2(data_y, data_x))
     wind_from = (270 - math_angle) % 360
